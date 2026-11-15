@@ -1,0 +1,9 @@
+# Generated binaries and build folders
+build/
+cmake-build-*/
+.DS_Store
+.vscode/
+
+# Generated profiling results (leave the supplied template tracked)
+results/*.csv
+!results/metrics_template.csv

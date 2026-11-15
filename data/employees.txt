@@ -1,0 +1,35 @@
+1001|Amina|Kato|Engineering|Software Engineer|29|4|72000|4.3|1
+1002|John|Okello|HR|HR Officer|35|7|54000|3.8|1
+1003|Linda|Nabwire|Finance|Accountant|41|10|68000|4.1|1
+1004|Brian|Ssemanda|Engineering|Data Analyst|26|2|61000|4.6|1
+1005|Grace|Nansubuga|Marketing|Marketing Associate|31|5|50000|3.9|0
+1006|Leah|Kato|Engineering|Data Analyst|50|25|47500|4.9|1
+1007|Sara|Okello|Finance|Financial Analyst|44|2|83500|4.4|1
+1008|Leah|Nabwire|Sales|Sales Representative|39|17|43500|4.3|1
+1009|Amina|Martin|Marketing|Brand Manager|45|26|159500|3.9|0
+1010|Omar|Wilson|HR|HR Specialist|53|10|109500|3.6|1
+1011|Sam|Garcia|Finance|Financial Analyst|47|5|95500|3.2|1
+1012|Sara|Garcia|Operations|Operations Coordinator|26|4|137000|3.2|1
+1013|Linda|Ssemanda|Sales|Sales Analyst|58|28|151000|3.5|1
+1014|Amina|Nabwire|HR|HR Officer|55|34|119000|2.8|1
+1015|Leah|Martin|HR|HR Specialist|64|2|58500|2.9|0
+1016|Amina|Chen|Operations|Operations Coordinator|39|15|136500|3.8|0
+1017|Brian|Patel|Operations|Operations Manager|39|9|99000|2.6|1
+1018|Sara|Nabwire|HR|HR Specialist|23|2|52000|3.5|1
+1019|Zara|Patel|Marketing|Marketing Associate|44|11|109500|3.5|1
+1020|Omar|Lee|Operations|Operations Coordinator|28|6|102500|2.5|1
+1021|Iris|Wilson|Operations|Planner|38|17|68500|5.0|1
+1022|Grace|Martin|HR|HR Specialist|40|17|100500|5.0|1
+1023|Maya|Nabwire|Sales|Sales Representative|55|0|42000|3.0|1
+1024|Brian|Wilson|Finance|Controller|59|1|144500|2.8|1
+1025|Iris|Lee|Finance|Accountant|54|20|99000|4.2|1
+1026|Sam|Nansubuga|Engineering|Software Engineer|52|1|57000|4.1|1
+1027|Sam|Wilson|Engineering|Software Engineer|33|2|88000|4.3|1
+1028|Adam|Khan|Sales|Sales Analyst|50|25|158500|3.4|1
+1029|Zara|Okello|Engineering|Systems Engineer|22|1|156500|4.5|1
+1030|Sam|Garcia|Sales|Account Manager|48|24|65500|3.0|0
+1031|Daniel|Patel|Marketing|Content Specialist|32|5|95500|5.0|1
+1032|Leah|Nansubuga|Sales|Account Manager|41|10|150500|4.7|1
+1033|Grace|Nansubuga|Marketing|Brand Manager|55|20|96000|3.9|0
+1034|Linda|Nabwire|Marketing|Brand Manager|35|6|93000|3.9|1
+1035|Amina|Garcia|Finance|Financial Analyst|29|10|148000|4.2|1
