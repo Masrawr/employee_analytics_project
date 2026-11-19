@@ -13,7 +13,7 @@ program will produce reports or benchmark results. Each unfinished stub throws a
 |---|---|---|
 | Member 1 - Masroor Jehangiri | Project organization, command-line entry point, build setup, test data, test plan, presentation, final integration | `src/main.cpp`, `CMakeLists.txt`, `.gitignore`, `README.md`, `scripts/`, `data/`, `tests/`, `presentation/`, `results/` |
 | Member 2 - Malaak Ghanem| Part A Employee class; Part B parsing/loading; Part C vector; Part D full report | `include/Employee.h`, `src/Employee.cpp`, `include/EmployeeIO.h`, `src/EmployeeIO.cpp`, `src/Analytics.cpp` (vector and report printer), shared declarations in `include/Analytics.h` |
-| Member 3 - Name | Parts E–G: benchmarking, cache profiling coordination, list and set analytics, iteration vs recursion | `include/EmployeeContainers.h`, `src/EmployeeContainers.cpp`, `src/ContainerAnalytics.cpp`, `include/RecursiveAlgorithms.h`, `src/RecursiveAlgorithms.cpp`, `include/Benchmark.h`, `src/Benchmark.cpp` |
+| Member 3 - Doston Botirjonov | Parts E–G: benchmarking, cache profiling coordination, list and set analytics, iteration vs recursion | `include/EmployeeContainers.h`, `src/EmployeeContainers.cpp`, `src/ContainerAnalytics.cpp`, `include/RecursiveAlgorithms.h`, `src/RecursiveAlgorithms.cpp`, `include/Benchmark.h`, `src/Benchmark.cpp` |
 
 **Shared contract:** Do not change function names, parameters, return types, or
 `AnalyticsReport` fields without coordinating with the other two members.
