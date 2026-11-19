@@ -1,26 +1,175 @@
 // PART D — OWNER: MEMBER 2
-#pragma once
-
 #include <vector>
 #include <map>
-#include <string>
-
 #include "Employee.h"
 
-int numOfEmployees(std::vector<Employee>& emp);
-double AverageSalary(std::vector<Employee>& emp);
-std::string HighestPaidEmp(std::vector<Employee>& emp);
-std::string LowestPaidEmp(std::vector<Employee>& emp);
-double AveragePerformance(std::vector<Employee>& emp);
-std::map<std::string, int> departmentCount(std::vector<Employee>& emp);
-std::string highestAvg(std::vector<Employee>& emp);
-int countFullTime(std::vector<Employee>& emp);
-int countPartTime(std::vector<Employee>& emp);
-int abovePerformanceThreshold(
-    std::vector<Employee>& emp,
-    double threshold
-);
-int eligibleForPromotionOrBonus(std::vector<Employee>& emp);
+using namespace std;
+
+int numOfEmployees(vector<Employee>& emp)
+{
+	return static_cast<int>(emp.size());
+}
+
+double AverageSalary(vector<Employee>& emp)
+{
+	if (emp.empty()) return 0.0;
+
+	double total = 0.0; // initialize total as 0
+
+	for (auto& e : emp) {
+		total += e.getSalary(); // add each salary to total
+	}
+
+	return total / emp.size(); // divide total by vector size to get average
+}
+
+string HighestPaidEmp(vector<Employee>& emp)
+{
+	if (emp.empty()) return "";
+
+	double max = emp[0].getSalary(); // Initialize maximum salary as the first salary
+	string empMax = emp[0].getName(); // Initialize the highest paid employee as the first employee
+	// This helps keep track of the employee with the current maximum salary
+	for (auto& e : emp) {
+		if (e.getSalary() > max)
+		{
+			max = e.getSalary();
+			empMax = e.getName();
+		}
+	}
+
+	return empMax;
+
+}
+
+string LowestPaidEmp(vector<Employee>& emp)
+{
+	if (emp.empty()) return "";
+
+	double min = emp[0].getSalary(); // Initialize minimum salary as the first salary
+	string empMin = emp[0].getName(); // Initialize the lowest paid employee as the first employee
+	// This helps keep track of the employee with the current minimum salary
+	for (auto& e : emp) {
+		if (e.getSalary() < min)
+		{
+			min = e.getSalary();
+			empMin = e.getName();
+		}
+	}
+
+	return empMin;
+}
+
+double AveragePerformance(vector<Employee>& emp)
+{
+	if (emp.empty()) return 0.0;
+
+	double total = 0.0; // initialize total as 0
+
+	for (auto& e : emp) {
+		total += e.getPerformance(); // add each performance score to the total
+	}
+
+	return total / emp.size(); // divide the total by the number of employees to get average
+}
+
+map<string, int> departmentCount(vector<Employee>& emp)
+{
+	map<string, int> depCounts;
+
+	for (auto& e : emp) {
+		if (depCounts.find(e.getDep()) == depCounts.end())
+			depCounts[e.getDep()] = 1; // if we encounter the department but it is not already in the map, we initialize the key to 1
+		else
+			depCounts[e.getDep()]++;  // if it is found then we increment the key by one
+	}
+
+	return depCounts;
+}
+
+string highestAvg(vector<Employee>& emp)
+{
+	map<string, int> depCounts;
+
+	for (auto& e : emp) {
+		if (depCounts.find(e.getDep()) == depCounts.end())
+			depCounts[e.getDep()] = 1; // if we encounter the department but it is not already in the map, we initialize the key to 1
+		else
+			depCounts[e.getDep()]++;  // if it is found then we increment the key by one
+	}
+
+	map<string, double> depTotal;
+
+	for (auto& e : emp) {
+		if (depTotal.find(e.getDep()) == depTotal.end())
+			depTotal[e.getDep()] = e.getSalary(); // initialize with the first salary if this is the first encounter 
+		else
+			depTotal[e.getDep()] += e.getSalary(); // add salary to total otherwise
+	}
+
+	double maxSal = 0.0; // initialize as 0
+	string maxDep = "";  // initialize as empty
+
+	for (auto& department : depTotal) {
+		if ((department.second / depCounts[department.first]) > maxSal) {
+			maxSal = department.second / depCounts[department.first];
+			maxDep = department.first;
+		}
+		// department.first  -> department name
+		// department.second -> total salary
+	}
+
+	return maxDep;
+}
+
+int countFullTime(vector<Employee>& emp)
+{
+	int count = 0;
+
+	for (auto& e : emp) {
+		if (e.getIsFullTime())
+			count++;
+	}
+
+	return count;
+}
+
+int countPartTime(vector<Employee>& emp)
+{
+	int count = 0;
+
+	for (auto& e : emp) {
+		if (!e.getIsFullTime())
+			count++;
+	}
+
+	return count;
+}
+
+int abovePerformanceThreshold(vector<Employee>& emp, double threshold)
+{
+	int count = 0;
+
+	for (auto& e : emp) {
+		if (e.getPerformance() > threshold)
+			count++;
+	}
+
+	return count;
+}
+
+int eligibleForPromotionOrBonus(vector<Employee>& emp)
+{
+	int count = 0;
+
+	for (auto& e : emp) {
+		if (e.isEligibleForPromotion() || e.annualBonusEstimate() > 0)
+			count++;
+	}
+
+	return count;
+}
+
 /*#include "Analytics.h"
 #include <stdexcept>
 
