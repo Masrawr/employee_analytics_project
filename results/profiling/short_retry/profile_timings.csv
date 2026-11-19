@@ -1,0 +1,4 @@
+case,dataset,container,strategy,operation,repetitions,employees,elapsed_ms,checksum
+employees.txt:set:recursive:filter_performance,employees.txt,set,recursive,filter_performance,1101734,35,0.000153962501836,15
+employees.txt:set:iterative:search_id,employees.txt,set,iterative,search_id,10000000,35,2.06781965008e-05,0
+employees_large.txt:set:iterative:search_id,employees_large.txt,set,iterative,search_id,10000000,6001,2.16417927009e-05,0

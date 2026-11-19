@@ -4,6 +4,7 @@
 #include "EmployeeContainers.h"
 #include <cstddef>
 #include <iosfwd>
+#include <map>
 #include <optional>
 #include <string>
 #include <vector>
@@ -23,7 +24,7 @@ int abovePerformanceThreshold(
 );
 int eligibleForPromotionOrBonus(std::vector<Employee>& emp);
 
-/*struct DepartmentSummary {
+struct DepartmentSummary {
     std::string name;
     std::size_t employeeCount{0};
     double averageSalary{0.0};
@@ -52,4 +53,4 @@ void printReport(const AnalyticsReport& report, std::ostream& out);
 
 // PART F — OWNER: MEMBER 3
 AnalyticsReport analyzeList(const EmployeeList& employees, double threshold);
-AnalyticsReport analyzeSet(const EmployeeSet& employees, double threshold);*/
+AnalyticsReport analyzeSet(const EmployeeSet& employees, double threshold);

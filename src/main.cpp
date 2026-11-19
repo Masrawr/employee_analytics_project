@@ -1,11 +1,11 @@
 // PROJECT SHELL / CLI — OWNER: Masroor
-// Member 2 and Member 3 fill the TODO stubs in other source files.
 #include "Analytics.h"
 #include "Benchmark.h"
 #include "EmployeeContainers.h"
 #include "EmployeeIO.h"
 
 #include <cstdlib>
+#include <cmath>
 #include <exception>
 #include <iomanip>
 #include <iostream>
@@ -49,6 +49,21 @@ namespace
         return false;
     }
 
+    int parseInteger(const std::string& value) {
+        std::size_t used = 0;
+        const int result = std::stoi(value, &used);
+        if (used != value.size()) throw std::invalid_argument("Invalid integer: " + value);
+        return result;
+    }
+
+    double parseNumber(const std::string& value) {
+        std::size_t used = 0;
+        const double result = std::stod(value, &used);
+        if (used != value.size() || !std::isfinite(result))
+            throw std::invalid_argument("Invalid finite number: " + value);
+        return result;
+    }
+
     Options parseOptions(int argc, char *argv[])
     {
         Options options;
@@ -81,13 +96,13 @@ namespace
             else if (flag == "--operation")
                 options.benchmark.operation = value;
             else if (flag == "--threshold")
-                options.benchmark.threshold = std::stod(value);
+                options.benchmark.threshold = parseNumber(value);
             else if (flag == "--department")
                 options.benchmark.department = value;
             else if (flag == "--search-id")
-                options.benchmark.searchId = std::stoi(value);
+                options.benchmark.searchId = parseInteger(value);
             else if (flag == "--repetitions")
-                options.benchmark.repetitions = std::stoi(value);
+                options.benchmark.repetitions = parseInteger(value);
             else
                 throw std::invalid_argument("Unknown option: " + flag);
         }
@@ -129,7 +144,6 @@ int main(int argc, char *argv[])
 
         if (options.mode == "benchmark")
         {
-            // TODO MEMBER 3 in Benchmark.cpp: returns real timing measurements.
             const BenchmarkResult result = runBenchmark(config);
             if (!options.csv)
             {
@@ -139,25 +153,20 @@ int main(int argc, char *argv[])
             return 0;
         }
 
-        // TODO MEMBER 2 in EmployeeIO.cpp: loads the pipe-separated records.
         const std::vector<Employee> employees = EmployeeIO::loadVector(config.filePath);
         AnalyticsReport report;
         if (config.container == "vector")
         {
-            // TODO MEMBER 2 in Analytics.cpp.
             report = analyzeVector(employees, config.threshold);
         }
         else if (config.container == "list")
         {
-            // TODO MEMBER 3 in EmployeeContainers.cpp + ContainerAnalytics.cpp.
             report = analyzeList(makeEmployeeList(employees), config.threshold);
         }
         else
         {
-            // TODO MEMBER 3 in EmployeeContainers.cpp + ContainerAnalytics.cpp.
             report = analyzeSet(makeEmployeeSet(employees), config.threshold);
         }
-        // TODO MEMBER 2 in Analytics.cpp: display the common report.
         printReport(report, std::cout);
         return 0;
     }

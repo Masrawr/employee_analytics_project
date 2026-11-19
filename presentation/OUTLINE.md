@@ -1,6 +1,6 @@
 # Presentation Outline — OWNER: Masroor
 
-Keep the presentation based on *measured* results. Do not fill tables with fabricated numbers.
+Measured evidence is now available in `results/PARTS_E_G.md` and `results/cache_metrics.csv`. Use its tables and limitations for slides 5–9; cache hits are not directly measured.
 
 ## Slide 1 — Title
 **Employee Analytics in C++: STL Containers, Cache Behavior, and Recursion**

@@ -3,7 +3,7 @@
 #include <string>
 
 // PART A — OWNER: MEMBER 2
-// Every method is declared here; implement its TODO in src/Employee.cpp.
+// Employee data and the group's bonus/promotion rules.
 class Employee {
 private:
     int employeeId_{};

@@ -1,22 +1,21 @@
-# Integration and Test Plan — Member 1 tracks this
+# Verification
 
-These are tests to **run after** Members 2 and 3 complete the TODOs.
+Run `python3 tests/verify.py ./build/employee_analytics` after building, or use
+`ctest --test-dir build --output-on-failure` with CMake and Python 3 installed.
+The C++ unit test is `tests/employee_tests.cpp`.
 
-- [ ] `cmake -S . -B build -DCMAKE_BUILD_TYPE=Release` and `cmake --build build` succeed.
-- [ ] `--mode report --container vector` correctly loads 35 records.
-- [ ] `--mode report --container list` shows the same analytics values as vector.
-- [ ] `--mode report --container set` shows the same analytics values as vector.
-- [ ] The 6001-record dataset loads; total count is 6001 in every container.
-- [ ] Average salary/performance and department stats agree for every container.
-- [ ] Highest/lowest salaries and full-time/part-time counts agree.
-- [ ] Threshold filtering uses `>` (not `>=`) if using the assignment's "above" wording.
-- [ ] Bonus/promotion results match the documented rules in README.
-- [ ] Empty file yields a safe, meaningful report without dividing by zero.
-- [ ] Malformed record causes a useful filename/line-number error.
-- [ ] Duplicate IDs are handled consistently (important for `set`).
-- [ ] All five Part E operations (and both filtering choices) can be profiled separately.
-- [ ] All three containers are compared with the same dataset.
-- [ ] Iterative and recursive aggregation/filter/search produce equivalent checksums.
-- [ ] Recursive tests do not exhaust stack capacity (document limits if encountered).
-- [ ] Actual cache statistics are measured with a profiler; they are not inferred from elapsed time.
-- [ ] Charts/tables and presentation conclusions match collected measurements.
+Verified during the November 18 review:
+
+- [x] Direct C++17 Clang build with warnings enabled.
+- [x] 226 CLI cases, including independent expected report values and checksums.
+- [x] Both supplied datasets and all three containers.
+- [x] Iterative/recursive parity, present/last/missing-ID searches and sorting checksums.
+- [x] Empty inputs, salary ties, threshold equality, CRLF and malformed input.
+- [x] Consistent duplicate-ID rejection with useful filename/line-number errors.
+- [x] Employee serialization precision, accessors and analytics rule boundaries.
+- [x] AddressSanitizer and UndefinedBehaviorSanitizer checks.
+- [x] Actual elapsed-time CSVs for both datasets, 100 repetitions per combination.
+- [ ] CMake/CTest execution (CMake unavailable on this machine).
+- [x] Hardware L1D counters for 60 combinations; corrected short intervals, zero invalid-counter rows, independent checksum validation, measured explanations.
+
+See `results/REVIEW.md` for evidence, limitations and outstanding submission work.

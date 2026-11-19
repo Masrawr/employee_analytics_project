@@ -1,0 +1,30 @@
+{
+  "CPU Counters": {
+    "configurationType": {
+      "guided": {}
+    },
+    "countingLevel": "EL0",
+    "selectedCountingMode": {
+      "analysisMode": "metrics",
+      "countingMode": "l1d_metrics"
+    },
+    "selectedCountingModeDisplayName": "L1D Cache Metrics",
+    "sampleByTime": true,
+    "processBucketSize": 10,
+    "useDebuggingInformation": true,
+    "allEventsAndFormulas": [],
+    "pmiEventAliasOrMnemonic": "",
+    "pmiThreshold": 1000000,
+    "useHighFrequencyForGuidedMode": false,
+    "useHighFrequencyForManualMode": false
+  },
+  "Points of Interest": {
+    "excludeOSLogs": false
+  },
+  "Time Profiler": {
+    "contextSwitchSampling": false,
+    "highFrequencySampling": false,
+    "recordKernelStacks": false,
+    "recordWaitingThreads": false
+  }
+}

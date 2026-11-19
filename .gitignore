@@ -7,3 +7,14 @@ cmake-build-*/
 # Generated profiling results (leave the supplied template tracked)
 results/*.csv
 !results/metrics_template.csv
+
+# Keep the verified timing evidence with the submission.
+!results/timings_small.csv
+!results/timings_large.csv
+
+# Instruments bundles are retained locally; compact exports are submission evidence.
+results/**/*.trace/
+results/**/MetricTable.xml
+
+!results/cache_metrics.csv
+__pycache__/
